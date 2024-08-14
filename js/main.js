@@ -27,6 +27,15 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
+function myFunction() {
+  var x = document.getElementById("burger-nav");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 
 $(function() {
   $('.questions__info').on('click', function () {
@@ -52,6 +61,8 @@ $(function() {
 
 $(function () {
   $(document).ready(function() {
+    $('.application__text').hide();
+    $('#link_maibbank').show();
     $('.application__content').hide();
     $('#swipper-maibbank').show();
 
@@ -59,8 +70,10 @@ $(function () {
         event.preventDefault(); 
         $('.application__btn').removeClass('application__btn--active');
         $(this).addClass('application__btn--active');
-        $('.application__content').hide()
-        $('#swipper-' + $(this).attr('id')).show()
+        $('.application__content').hide();
+        $('#swipper-' + $(this).attr('id')).show();
+        $('.application__text').hide();
+        $('#link_' + $(this).attr('id')).show();
     });
   })}
 )
